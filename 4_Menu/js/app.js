@@ -21,20 +21,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
     });
 
+        element.addEventListener('mouseout', function (event) {
+            console.log('Bye');
+
+            var innerUl = element.querySelector('ul');
+            if (innerUl !== null){
+                //console.log(innerUl);
+                innerUl.style.display = 'none';
+            }
+        });
+
 
     });
 
-
-   [...listEl].forEach(function(element){
-    element.addEventListener('mouseout', function (event) {
-        console.log('Bye');
-
-        var innerUl = element.querySelector('ul');
-        if (innerUl !== null){
-            //console.log(innerUl);
-            innerUl.style.display = 'none';
-        }
-    });
-    });
 
 });
