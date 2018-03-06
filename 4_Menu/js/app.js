@@ -29,10 +29,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 //console.log(innerUl);
                 innerUl.style.display = 'none';
             }
+
         });
 
-
     });
-
 
 });

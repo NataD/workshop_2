@@ -17,11 +17,10 @@ document.addEventListener('DOMContentLoaded', function () {
           var textTooltip = element.dataset.text; //variable stores value of the attribute data-text="";
            // console.log(tooltipText);
 
-
-            var newSpan = document.createElement('span'); //create variable to hold new span element
-            newSpan.classList.add('tooltipText'); //add class to style new span element
-            newSpan.innerText = textTooltip; // add text to new span element
-            element.appendChild(newSpan); //add new span element
+          var newSpan = document.createElement('span'); //create variable to hold new span element
+          newSpan.classList.add('tooltipText'); //add class to style new span element
+          newSpan.innerText = textTooltip; // add text to new span element
+          element.appendChild(newSpan); //add new span element
            // console.log(newSpan); //console.log new span element to check that everything works fine
 
         });
@@ -33,7 +32,6 @@ document.addEventListener('DOMContentLoaded', function () {
             element.removeChild(removeSpan); //remove created new span element
         });
 
-
-
     });
+
 });

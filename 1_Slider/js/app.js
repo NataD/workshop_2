@@ -32,21 +32,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
             if (element.className === 'visible'){
                 element.classList.remove('visible');
-
             }
 
         });
         counter -=1;
         console.log(counter);
 
-        if (counter <= 0) {
+        if (counter < 0) {
             counter = listElements.length-1;
-
         }
 
         listElements[counter].classList.add('visible');
-
-
 
     });
 
@@ -55,16 +51,11 @@ document.addEventListener('DOMContentLoaded', function () {
     next.addEventListener('click', function (event) {
        // console.log('hello');
 
-
         [...listElements].forEach(function(element){
 
                 if (element.className === 'visible'){
                    element.classList.remove('visible');
-
                }
-
-
-
 
         });
         counter +=1;

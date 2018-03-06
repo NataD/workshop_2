@@ -17,20 +17,14 @@ document.addEventListener('DOMContentLoaded', function(){
     var inputField = document.querySelector('#tagInput');
     console.log(inputField);
 
-
-
     showBtn.addEventListener('click', function (event) {
 
-        //write inout value to variable
+        //write input value to variable
         var inputText = inputField.value;
         console.log(inputText);
 
         //clean input
         inputField.value = '';
-
-
-
-
 
         [...images].forEach(function (element) {
             //var imagesTags = [];
@@ -47,13 +41,7 @@ document.addEventListener('DOMContentLoaded', function(){
                 element.classList.add('invisible');
             }
 
-
-            //else {
-           //     console.log('');
-           // }
         });
-
-
 
     });
 
@@ -81,10 +69,6 @@ document.addEventListener('DOMContentLoaded', function(){
                 element.classList.add('invisible');
             }
 
-
-            //else {
-            //     console.log('');
-            // }
         });
 
     });
