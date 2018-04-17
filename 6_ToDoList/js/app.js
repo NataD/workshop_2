@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var addBtn = document.querySelector('#addTaskButton'); //variable to store a button responsible for adding elements to list
     var inputField = document.querySelector('#taskInput'); //variable to store an input;
     var taskList = document.querySelector('#taskList'); //variable to store <li> elements added to list
+    var listItems = taskList.children;
     var removeAll = document.querySelector('#removeFinishedTasksButton'); //variable to store button that removes completed tasks
     var counter = document.querySelector('#counter');
     var countTasks = 0; //variable to be assigned to counter span;
@@ -16,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     addBtn.addEventListener('click', function (event) {
-        //write inout value to variable
+        //write input value to variable
         var inputText = inputField.value;
         console.log(inputText);
 
@@ -46,8 +47,12 @@ document.addEventListener('DOMContentLoaded', function () {
         //code to delete tasks from list
         deleteBtn.addEventListener('click', function (event) {
            taskList.removeChild(newListElement);
+           if (countTasks <= 0){
+             countTasks = 0;
+           } else {
             countTasks -= 1;
             counter.innerText = countTasks;
+            }
         });
 
         var completeBtn = document.createElement('button');
@@ -71,21 +76,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
         //code to remove all completed tasks
         removeAll.addEventListener('click', function (event) {
-            if (newListElement.className === 'completed'){
-                taskList.removeChild(newListElement);
-            }
+            removeFinishedTasks(listItems);
         });
+
+        function removeFinishedTasks(listItems) {
+          [...listItems].forEach(function(element) {
+          if (element.className === 'completed') {
+              element.parentElement.removeChild(element);
+          }
+       });
+   }
 
     });
 
 });
-
-
-
-
-
-
-
-
-
-
